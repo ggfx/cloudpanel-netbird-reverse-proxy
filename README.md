@@ -1,17 +1,18 @@
-# Cloudpanel Netbird reverse-proxy vhost config
+# Cloudpanel and Netbird setup with Nginx reverse-proxy config
 
-This repository contains setup and config files to create the Netbird self-hosted docker instances with Zitadel in combination with Cloudpanel as a reverse-proxy.
+This repository contains setup and config files to create the Netbird self-hosted docker instances with Zitadel in combination with Cloudpanel running Nginx as a reverse-proxy.
 
 ## Requirements
 
-* A public available virtual server hosted at some provider e.g. Hetzner, DigitalOcean, etc. and running [Cloudpanel v2](https://www.cloudpanel.io/docs/v2/getting-started/).
+* A public available virtual server e.g. Hetzner, DigitalOcean, etc. and running [Cloudpanel v2](https://www.cloudpanel.io/docs/v2/getting-started/).
 
-* Also your VPS and firewall should meet the [self-host Netbird quickstart guide requirements](https://docs.netbird.io/selfhosted/selfhosted-quickstart#requirements)
+* Also your VPS should meet the [self-host Netbird quickstart guide requirements](https://docs.netbird.io/selfhosted/selfhosted-quickstart#requirements). From my tests it is sufficient to open the TCP ports 80 and 443 in the firewall as well as UDP ports 3478 and 49152 to 65535.
 
-* A domain you intend to use for your Netbird management endpoint e.g. _netbird.example.com_. Your domain should be pointing to your VPS.
+* A domain you intend to use for your Netbird management endpoint e.g. _netbird.example.com_. Your domain A-record should be pointing to your VPS.
 
-* [Docker](https://github.com/docker/docker-install) should already be installed. You can use this command to do so:
+* [Docker](https://github.com/docker/docker-install) should already be installed. You can use this command from the server console to do so:
     ```sh
+    cd /opt
     curl -fsSL https://get.docker.com -o get-docker.sh
     sh get-docker.sh
     ```
@@ -25,6 +26,7 @@ Switch to SSL/TLS and create a new Let's Encrypt Certificate for your domain.
 
 1. If you can open your website in the browser and it shows "Hello World :-)" then you are able to proceed with the Netbird installation. Connect to your server via SSH and clone this repository:
     ```sh
+    cd /opt
     git clone https://github.com/ggfx/cloudpanel-netbird-reverse-proxy.git
     ```
     Change into the cloudpanel-netbird-reverse-proxy/netbird directory and start the script:
