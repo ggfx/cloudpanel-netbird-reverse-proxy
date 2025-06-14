@@ -48,6 +48,14 @@ Switch to SSL/TLS and create a new Let's Encrypt Certificate for your domain.
 
 1. As a final security step you should consider changing the password for the default Zitadel Admin user. Open https://netbird.example.com/ui/console and login with _zitadel-admin@zitadel.netbird.example.com_ and the password = _Password1!_ (refer to [Self-hosting Zitadel](https://zitadel.com/docs/self-hosting/deploy/compose)). **This represents a potential security risk!**
 
+## Update
+
+To update your Netbird management server, just run the update script:
+```sh
+cd cloudpanel-netbird-reverse-proxy/netbird
+sudo chmod +x netbird-update.sh
+./netbird-update.sh
+```
 
 # Known issues
 
