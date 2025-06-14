@@ -2,6 +2,8 @@
 
 This repository contains setup and config files to create the Netbird self-hosted docker instances with Zitadel in combination with Cloudpanel running Nginx as a reverse-proxy.
 
+[netbird-with-zitadel-without-caddy.sh](https://github.com/ggfx/cloudpanel-netbird-reverse-proxy/blob/main/netbird/netbird-with-zitadel-without-caddy.sh) is based on [getting-started-with-zitadel.sh](https://github.com/netbirdio/netbird/blob/main/infrastructure_files/getting-started-with-zitadel.sh), Copyright (c) 2022 NetBird GmbH & Authors.
+
 ## Requirements
 
 * A public available virtual server e.g. Hetzner, DigitalOcean, etc. and running [Cloudpanel v2](https://www.cloudpanel.io/docs/v2/getting-started/).
